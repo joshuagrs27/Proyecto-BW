@@ -1,0 +1,42 @@
+﻿@model Proyecto.Models.Horario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Horario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.horaApertura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horaApertura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horaCierre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horaCierre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dia)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idHorario }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

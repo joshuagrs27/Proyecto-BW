@@ -1,0 +1,190 @@
+﻿@{
+    var db = WebMatrix.Data.Database.Open("TablasDBContext");
+    var selectedData = db.Query("Select Avg(precio) as 'Promedio del costo de platillos' from Platillo");
+    var a = db.Query("Select Count(idProducto) as 'Productos totales' from Producto");
+    var b = db.Query("Select Count_Big(idPlatillo) as 'Platillos totales' from Platillo");
+    var c = db.Query("Select Sum(precio) as 'Precio total de las atracciones'from Atracción");
+    var d = db.Query("Select Min(precio) as 'Precio minimo de las atracciones'from Atracción");
+    var e = db.Query("Select Max(precio) as 'Precio maximo de las atracciones'from Atracción");
+    var f = db.Query("SELECT CHECKSUM_AGG(CAST(precio AS INT)) as 'suma de comprobacion'FROM Producto");
+    var g = db.Query("SELECT  precio as 'Precios diferentes de platillos' FROM Platillo group by precio");
+    var h = db.Query("select stdev(precio) as 'desviacion estandar de precio total de platillos' from Producto");
+    var i = db.Query("select var(precio) as 'Varianza de precio total de platillos' from Producto");
+
+    var grid = new WebGrid(source: selectedData);
+    var grid2 = new WebGrid(source: a);
+    var grid3 = new WebGrid(source: b);
+    var grid4 = new WebGrid(source: c);
+    var grid5 = new WebGrid(source: d);
+    var grid6 = new WebGrid(source: e);
+    var grid7 = new WebGrid(source: f);
+    var grid8 = new WebGrid(source: g);
+    var grid9 = new WebGrid(source: h);
+    var grid10 = new WebGrid(source: i);
+
+
+    }
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Movies</title>
+    <style type="text/css">
+        .grid {
+            margin: 4px;
+            border-collapse: collapse;
+            width: 600px;
+        }
+
+            .grid th, .grid td {
+                border: 1px solid #C0C0C0;
+                padding: 5px;
+            }
+
+        .head {
+            background-color: #E8E8E8;
+            font-weight: bold;
+            color: #FFF;
+        }
+
+        .alt {
+            background-color: #E8E8E8;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Promedio del costo de platillos</h1>
+    <div>
+        @grid.GetHtml(
+            tableStyle: "grid",
+            headerStyle: "head",
+            alternatingRowStyle: "alt",
+            columns: grid.Columns(
+                grid.Column("Promedio del costo de platillos")
+
+            )
+        )
+    </div>
+    <h1>Productos totales</h1>
+    <div>
+        @grid2.GetHtml(
+            tableStyle: "grid",
+            headerStyle: "head",
+            alternatingRowStyle: "alt",
+            columns: grid.Columns(
+                grid.Column("Productos totales")
+
+            )
+        )
+    </div>
+
+    <h1>Platillos totales</h1>
+    <div>
+        @grid3.GetHtml(
+            tableStyle: "grid",
+            headerStyle: "head",
+            alternatingRowStyle: "alt",
+            columns: grid.Columns(
+                grid.Column("Platillos totales")
+
+            )
+        )
+    </div>
+
+    <h1>Precio total de las atracciones</h1>
+    <div>
+        @grid4.GetHtml(
+            tableStyle: "grid",
+            headerStyle: "head",
+            alternatingRowStyle: "alt",
+            columns: grid.Columns(
+                grid.Column("Precio total de las atracciones")
+
+            )
+        )
+    </div>
+
+    <h1>Precio minimo de las atracciones</h1>
+    <div>
+        @grid5.GetHtml(
+            tableStyle: "grid",
+            headerStyle: "head",
+            alternatingRowStyle: "alt",
+            columns: grid.Columns(
+                grid.Column("Precio minimo de las atracciones")
+
+            )
+        )
+    </div>
+
+    <h1>Precio maximo de las atracciones</h1>
+    <div>
+        @grid6.GetHtml(
+            tableStyle: "grid",
+            headerStyle: "head",
+            alternatingRowStyle: "alt",
+            columns: grid.Columns(
+                grid.Column("Precio maximo de las atracciones")
+
+            )
+        )
+    </div>
+
+    <h1>suma de comprobacion</h1>
+    <div>
+        @grid7.GetHtml(
+            tableStyle: "grid",
+            headerStyle: "head",
+            alternatingRowStyle: "alt",
+            columns: grid.Columns(
+                grid.Column("suma de comprobacion")
+
+            )
+        )
+    </div>
+
+    <h1>Precios diferentes de platillos</h1>
+    <div>
+        @grid8.GetHtml(
+            tableStyle: "grid",
+            headerStyle: "head",
+            alternatingRowStyle: "alt",
+            columns: grid.Columns(
+                grid.Column("Precios diferentes de platillos")
+
+            )
+        )
+    </div>
+
+    <h1>desviacion estandar de precio total de platillos</h1>
+    <div>
+        @grid9.GetHtml(
+            tableStyle: "grid",
+            headerStyle: "head",
+            alternatingRowStyle: "alt",
+            columns: grid.Columns(
+                grid.Column("desviacion estandar de precio total de platillos")
+
+            )
+        )
+    </div>
+
+    <h1>Varianza de precio total de platillos</h1>
+    <div>
+        @grid10.GetHtml(
+            tableStyle: "grid",
+            headerStyle: "head",
+            alternatingRowStyle: "alt",
+            columns: grid.Columns(
+                grid.Column("Varianza de precio total de platillos")
+
+            )
+        )
+    </div>
+</body>
+</html>

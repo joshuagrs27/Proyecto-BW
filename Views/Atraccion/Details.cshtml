@@ -1,0 +1,58 @@
+﻿@model Proyecto.Models.Atraccion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Atraccion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horaApertura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horaApertura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horaCierre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horaCierre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idDisneyland)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idDisneyland)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idAtraccion }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

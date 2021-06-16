@@ -1,0 +1,34 @@
+﻿@model Proyecto.Models.TuristaParqueDisneyland
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TuristaParqueDisneyland</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idTurista)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idTurista)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idDisneyland)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idDisneyland)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idTuristaParqueDisneyland }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

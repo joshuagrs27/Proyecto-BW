@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Proyecto.Models.TipoEventoEvento>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idEvento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idTipoEvento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idEvento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idTipoEvento)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idTipoEventoEvento }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idTipoEventoEvento }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idTipoEventoEvento })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,58 @@
+﻿@model Proyecto.Models.Platillo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Platillo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sabor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sabor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idRestaurante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idRestaurante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idTurista)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idTurista)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idPlatillo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
